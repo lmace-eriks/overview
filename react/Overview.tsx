@@ -20,14 +20,12 @@ const Overview: StorefrontFunctionComponent<OverviewProps> = ({ }) => {
 
   const getOverview = () => {
     const productInfo = productContextValue.product;
-    console.info(productInfo);
     if (!productInfo) return;
 
     const items = productInfo.items;
     if (!items.length) return;
 
     const overview = items[0].complementName;
-
     const overviewHasMarkdown = overview.includes("<div");
 
     if (overviewHasMarkdown) setOverview(overview);
