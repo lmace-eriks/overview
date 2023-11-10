@@ -26,16 +26,12 @@ const Overview: StorefrontFunctionComponent<OverviewProps> = ({ }) => {
     if (!items.length) return;
 
     const overview = items[0].complementName;
-    const overviewHasMarkdown = overview.includes("<div");
+    const overviewHasMarkUp = overview.includes("<div");
 
-    if (overviewHasMarkdown) setOverview(overview);
+    if (overviewHasMarkUp) setOverview(overview);
   }
 
-  return (<>
-    {
-      overview && <div className={styles.container} dangerouslySetInnerHTML={{ __html: overview }} />
-    }
-  </>);
+  return (<> {overview && <div className={styles.container} dangerouslySetInnerHTML={{ __html: overview }} />} </>);
 };
 
 Overview.schema = {
